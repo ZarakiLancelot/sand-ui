@@ -14,6 +14,7 @@ export interface Theme {
     text: string;
     background: string;
     error: string;
+    errorDark: string;
     warning: string;
     success: string;
     info: string;

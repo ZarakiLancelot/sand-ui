@@ -9,6 +9,7 @@ export const tokens = {
     text: '#333333',
     background: '#ffffff',
     error: '#e74c3c',
+    errorDark: '#c0392b',
     warning: '#f39c12',
     success: '#2ecc71',
     info: '#3498db',
