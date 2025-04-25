@@ -31,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
       variant={variant}
       size={size}
       iconOnly={iconOnly}
+      fullWidth={fullWidth}
       {...props}
     >
       {leftIcon && <IconWrapper position="left">{leftIcon}</IconWrapper>}
