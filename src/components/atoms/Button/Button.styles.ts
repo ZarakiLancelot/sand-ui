@@ -23,14 +23,29 @@ const variantStyles: Record<NonNullable<ButtonProps['variant']>, ReturnType<type
   primary: css`
     background-color: ${defaultTheme.colors.primary};
     color: ${defaultTheme.colors.background};
+    border: none;
+
+    &:hover {
+      background-color: ${defaultTheme.colors.primaryDark};
+    }
   `,
   secondary: css`
     background-color: ${defaultTheme.colors.secondary};
-    color: ${defaultTheme.colors.background};
+    color: ${defaultTheme.colors.text};
+    border: none;
+
+    &:hover {
+      background-color: ${defaultTheme.colors.secondaryDark};
+    }
   `,
   danger: css`
     background-color: ${defaultTheme.colors.error};
     color: ${defaultTheme.colors.background};
+    border: none;
+
+    &:hover {
+      background-color: ${defaultTheme.colors.errorDark};
+    }
   `,
   ghost: css`
     background-color: transparent;
@@ -39,6 +54,8 @@ const variantStyles: Record<NonNullable<ButtonProps['variant']>, ReturnType<type
   `,
   link: css`
     background: none;
+    border: none;
+    text-decoration: underline;
     color: ${defaultTheme.colors.primary};
     padding: 0;
   `,
@@ -68,6 +85,7 @@ export const StyledButton = styled.button<{
   variant: ButtonProps['variant'];
   size: ButtonProps['size'];
   iconOnly: boolean;
+  fullWidth: boolean;
 }>`
   font-family: ${defaultTheme.typography.fontFamily};
   border-radius: ${defaultTheme.borderRadius.md};
@@ -75,6 +93,8 @@ export const StyledButton = styled.button<{
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
 
   ${({ size }) => size && sizeStyles[size]};
   ${({ variant }) => variant && variantStyles[variant]};
@@ -85,6 +105,10 @@ export const StyledButton = styled.button<{
       padding: ${defaultTheme.spacing.sm};
       width: ${size === 'sm' ? '32px' : size === 'md' ? '40px' : '48px'};
       height: ${size === 'sm' ? '32px' : size === 'md' ? '40px' : '48px'};
+
+      & > span {
+        margin: 0;
+      }
     `
   };
 
