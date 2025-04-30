@@ -1,3 +1,4 @@
+import '../src/styles/tailwind.css';
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';

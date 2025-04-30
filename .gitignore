@@ -30,7 +30,6 @@ pnpm-debug.log*
 .env.*.local
 
 # IDE and editor folders
-.vscode/
 .idea/
 
 # OS files
@@ -39,3 +38,6 @@ Thumbs.db
 
 # Miscellaneous
 *.log
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
